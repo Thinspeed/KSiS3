@@ -122,7 +122,6 @@ namespace KSiS2
             try
             {
 				stream = tcpClient.GetStream();
-				Console.WriteLine("Поток запущен");
 				var name = (new MessagePacket(0, user.Name)).GetBytes();
 				stream.Write(name, 0, name.Length);
 				while (true)
@@ -140,7 +139,7 @@ namespace KSiS2
 			}
 			catch (Exception e)
             {
-				Console.WriteLine(e.Message);
+				//Console.WriteLine(e.Message);
             }
             finally
             {
